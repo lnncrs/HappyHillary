@@ -2,7 +2,6 @@
 
 # Created by https://www.gitignore.io/api/scheme
 
-
 ### Scheme ###
 *.ss~
 *.ss#*
@@ -83,3 +82,6 @@ Temporary Items
 *.VC.db*
 .vs/
 .vscode/
+
+
+.gitignore
