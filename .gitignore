@@ -80,6 +80,5 @@ Temporary Items
 
 
 ### VisualStudioCode ###
-.browse.VC.db
-.browse.VC.db*
+*.VC.db*
 .vs/
