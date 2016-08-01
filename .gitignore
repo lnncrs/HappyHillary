@@ -82,3 +82,4 @@ Temporary Items
 ### VisualStudioCode ###
 *.VC.db*
 .vs/
+.vscode/
