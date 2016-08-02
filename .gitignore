@@ -83,5 +83,8 @@ Temporary Items
 .vs/
 .vscode/
 
+#data/ #área de entrada de dados brutos
+#data-out/ #área de saída dos dados tratados
+#data-tmp/ #área de stagging de dados
 
 .gitignore
