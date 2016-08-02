@@ -21,3 +21,22 @@ The project must be complete until 21 August 2016
 ### Happy Hillary in action
 
 ![Happy Hillary in action](http://jtf.org/wp-content/uploads/2015/08/hillary-clinton-laughing.jpg "Happy Hillary in Action")
+
+#### Folder structure
+
+* docs - Documentation
+* data - Raw data
+* data-out - Processed data
+* data-tmp - Staging area
+* modules
+..* io - Input/Output scripts
+..* webcrawler - Scripts to parse HTML pages
+..* workers - analysis scripts
+
+
+1. First ordered list item
+2. Another item
+⋅⋅* Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list
+4. And another item.
