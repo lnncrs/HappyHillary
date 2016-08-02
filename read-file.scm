@@ -9,7 +9,7 @@
 ;; representation, but the written representation is incomplete and therefore not parsable, an error
 ;; is signalled. 
 
-(define reader
+(define reader-lines
     (lambda (path)
         (let ((port (open-input-file path)))        ;; amarra "port" com a input-port dada
             (let rdr ((p (read port)))              ;; retorna uma string e amarra a "p"
@@ -21,5 +21,15 @@
                         (cons p (cons (rdr (read port)) '()))  ;; a cada nova linha, uma nova 
                                                                ;; lista se inicia
                         (cons p (rdr (read port)))))))))
+
+(define reader
+    (lambda (path)
+        (let ((port (open-input-file path)))        ;; amarra "port" com a input-port dada
+            (let rdr ((p (read port)))              ;; retorna uma string e amarra a "p"
+                (if (eof-object? p)                 ;; eof = end of file
+                    (begin                          ;; avalia duas expressões (cima pra baixo)
+                        (close-input-port port)     
+                        '())
+                        (cons p (rdr (read port))))))))
 
 (reader "txt2.txt")
