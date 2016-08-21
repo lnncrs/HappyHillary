@@ -32,7 +32,7 @@
 (load "C:\\Users\\lenin\\Documents\\Projects\\ufabc-pp-happyhillary\\modules\\io\\read-file.scm")
 
 ;(define txt (reader "/home/gmurayama/HappyHillary/modules/io/a.txt"))
-(define txt (reader "C:\\Users\\lenin\\Documents\\Projects\\ufabc-pp-happyhillary\\data\\test\\leak.txt"))
+(define txt (reader "C:\\Users\\lenin\\Documents\\Projects\\ufabc-pp-happyhillary\\data\\test\\leak_subj_201505-ansi.txt"))
 
 (count-list txt)
 
