@@ -4,31 +4,31 @@
             ((count
                 (lambda (l w s) ; list word size
                     (if (null? (cdr l))
-                        s
+                        (if (equal? w (car l))
+                            (+ s 1)
+                            s)
                         (if (equal? w (car l))
                             (count (cdr l) w (+ s 1))
                             (count (cdr l) w s)))))
-              (unique 
-                (lambda (rslt list)
-                    (if (null? list)
-                        rslt
-                        (let ((next (car list))
-                            (rest (cdr list)))
-                        (if (list? next)
-                            (unique rslt (append next rest))
-                            (unique (if (memq next rslt)
-                                        rslt
-                                        (cons next rslt))
-                                    rest))))))
+              (unique ;; PROBLEMAS COM O UNIQUE
+                (lambda (l)
+                        (cond 
+                            ((null? l) '())
+                            ((member (car l) (cdr l)) (unique (cdr l)))
+                            (else (cons (car l) (unique (cdr l)))))))
               (run
-                (lambda (u list)
+                (lambda (u l) ;; unique-list original-list
                     (if (null? (cdr u))
-                        '()
-                        (cons (cons (car list) (cons (count (cdr list) (car u) 0) '())) (run (cdr u) (cdr list))))))
-            )
-            (run (unique '() l) l))))
+                        ;'
+                        (cons (cons (car u) (cons (count l (car u) 0) '())) '())
+                        (cons (cons (car u) (cons (count l (car u) 0) '())) (run (cdr u) l))))))
+                        
+            (run (unique l) l))))
 
-(define a (cons 'la (cons 'la (cons 'b (cons 'c '())))))
+(define a (cons 'la (cons 'la (cons 'b (cons 'c '()))))) ;; funcionou
+(define b (cons 'a (cons 'c (cons 'e (cons 'a (cons 'a (cons 'a (cons 'b (cons 'c (cons 'd (cons 'd (cons 'c (cons 'c (cons 'e (cons 'e '())))))))))))))))
+
 a
-
 (count-list a)
+b
+(count-list b)
