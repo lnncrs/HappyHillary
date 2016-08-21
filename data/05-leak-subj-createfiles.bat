@@ -1,0 +1,4 @@
+bcp "select [ExtractedSubject] from [dbo].[vw_leak_subj] where year = 2015 and month = 5" queryout "leak/leak_subj_201505.txt" -S rigel\sql3 -T -d happy -w
+bcp "select [ExtractedSubject] from [dbo].[vw_leak_subj] where year = 2015 and month = 6" queryout "leak/leak_subj_201506.txt" -S rigel\sql3 -T -d happy -w
+bcp "select [ExtractedSubject] from [dbo].[vw_leak_subj] where year = 2015 and month = 7" queryout "leak/leak_subj_201507.txt" -S rigel\sql3 -T -d happy -w
+bcp "select [ExtractedSubject] from [dbo].[vw_leak_subj] where year = 2015 and month = 8" queryout "leak/leak_subj_201508.txt" -S rigel\sql3 -T -d happy -w
