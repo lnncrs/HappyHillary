@@ -1,0 +1,51 @@
+The biggest electoral question of the year is undoubtedly who becomes the next president. But just after that follows the issue of whether the Senate majority will flip again. Republicans took the chamber with a 54-46 seat majority in the 2014 midterm elections. Keeping that lead in 2016, however, will prove a more difficult task.
+
+According to The Huffington Post’s Senate model, which relies on the polls aggregated in HuffPost Pollster charts, there’s a 55 percent chance that the Senate will swing completely over ― and a 23 percent chance that it’s tied at 50 seats for each party. That means there’s a 78 percent chance that the Democratic Party could get 50 or more seats.
+
+Part of the Democrats’ advantage comes from holding more safe seats in the Senate than the Republicans they have 36 seats that aren’t up for election, compared to the GOP’s 30 safe seats. But some Republican candidates are underperforming, possibly thanks to Donald Trump at the top of the ticket.
+
+Based on projections for the presidential race, a tie would still be good news for Democrats. Most models give the Democratic ticket of Hillary Clinton and Sen. Tim Kaine (D-Va.) at least an 80 percent chance of winning the presidency. That would make Kaine the tie-breaking vote in the Senate as the vice president, shifting Democrats back into the majority by a 51-50 split. Of course, if the presidential election goes the other way, Republicans would have the upper hand.
+
+The model also produces probabilities for each individual Senate race where polling is available, and approximates the state of the race where there isn’t any or enough polling to run the model.
+
+Of 34 races, 20 don’t have polls ― or don’t have enough polling ― to run in the model. Most of those, however, are races with obvious outcomes. Alabama and Arkansas are clearly going to be Republican strongholds, while Hawaii and Connecticut will remain in Democratic hands.
+
+For these states, the probabilities are approximated using their ratings in the Cook Political Report. The probability of the Democrat winning is equal to the proportion of times the Democrat won from 1988-2014 in a Senate race with that same rating two months prior to the election. For “solid Democrat” and “solid Republican” seats, that’s 99 percent of the time. “Likely” seats get a 90 percent probability of that party winning.
+
+The closest races are in Florida, Illinois, North Carolina, New Hampshire, Nevada and Pennsylvania, according to the polls. They split evenly between Democrats and Republicans in the model.
+
+Florida and Illinois are included in the 20 states not running off of poll estimates. Cook classifies both as “tossups,” with 50/50 probabilities of going in either direction. Illinois is “called” for the Democrats, though, since the very limited polling shows Tammy Duckworth leading. Florida has plenty of polling, most of which shows anticipated Republican nominee Marco Rubio leading, but since the primaries don’t take place until August 30, it’s staying in the tossup column for now.
+
+North Carolina and Pennsylvania are called for the Republicans in the model, but both are only as certain as a coin flip. In the HuffPost Pollster averages, incumbent Richard Burr (R-N.C.) has a 2-point edge over Deborah Ross, and in Pennsylvania the Republican incumbent Pat Toomey leads challenger Katie McGinty by under half a percentage point. Both leads become 50 percent probabilities in the model after accounting for the possibility that undecided voters could flip the races.
+
+The model classifies New Hampshire and Nevada as Democratic wins, but also with only 50 percent probability. Republican incumbent Kelly Ayotte and Maggie Hassan are deadlocked in New Hampshire. In Nevada, Republican Joe Heck has a slight lead over Democrat Catherine Cortez-Masto, but due to slight differences in how the overall Senate model treats the polls (detailed below), the open-seat race leans slightly toward the Democratic side for seat allocation purposes.  
+
+Arizona’s race between John McCain (R) and Democratic challenger Ann Kirkpatrick will be interesting to watch, too. McCain is sitting at a relatively low 73 probability of reelection after his narrow leads in June polls ― and none since that have qualified for inclusion in HuffPost Pollster’s averages.   
+
+A couple of caveats are in order for these numbers.
+
+First, this model does not project out to Election Day. These figures are based on what polling and Cook Political Report ratings say about the races now. There is extra uncertainty built into the model to adjust for the possibility that the polls and ratings are wrong (more on that in the technical section below), but in general the results are dependent on the results right now.
+
+There’s one big reason for focusing the model on what we know now: Events that would substantially shake up the races are generally unpredictable. Poll numbers will wax and wane, and this model accounts for that. What it can’t account for (and no model can) is a big change in circumstances that would alter the election ― such as occurred in 2008 when the economy crashed in mid-September. All the model really does is say what is most likely given the current trajectory. A lot could change between now and November 8.
+
+Second, the Democratic vice presidential candidate is a sitting Senator. If the Clinton/ Kaine ticket wins the presidential election, there would be an open Senate seat in Virginia. The numbers in this model assume that a Democrat would replace Kaine. Since Virginia Gov. Terry McAuliff, who would appoint Kaine’s replacement, is also a Democrat this is a reasonable assumption.
+
+A full model page will be posted within a few weeks. In the meantime, daily updates will be included in HuffPollster, the daily newsletter for HuffPost Pollster. 
+
+How the model works
+
+It’s similar to HuffPost’s 2014 Senate model but it works in a simpler way. It begins with the standard HuffPost Pollster poll averaging model, which is a Bayesian Kalman filter model that combines all the publicly released Senate polls that meet Pollster’s criteria. This setup has the model calculate an average for each day based on the polls available prior to that date and 100,000 simulations of the polling.
+
+Bayesian models require starting values and information that tells the simulations how to work. These are the “priors” for any Bayesian model. They’re often not discussed in great detail, despite being important parts of this method.
+
+The 2016 Senate model uses the same priors that 2014 did, just updated for the new cycle. This is the main departure from the regular Pollster average, which doesn’t use priors based on previous elections. The model’s priors are based on an analysis of Cook Political Report Senate race ratings issued in July or August of the election years 2004 through 2014. The exact coding process is described in the 2014 summary, but in short, the priors for this year are built using the outcomes of the races in each Cook rating category in previous years.
+
+The model uses these priors to begin running the simulations. Based on the averages of these simulations, the model produces a percentage estimate of support for each candidate on each date, in addition to approximations of undecided voter proportions and the margin between the candidates ― and the probability that a candidate is ahead.
+
+After that, the model makes two slight adjustments to the probability that a candidate is ahead before finalizing it. These adjustments deal with uncertainty due to undecided voters in the polls and the reality that polls could have unknown biases.
+
+Briefly, the undecided adjustment subtracts the average proportion of undecided respondents relative to the margin between the candidates from the overall probability of a candidate leading. The smaller the margin between candidates, the more the undecided will matter. The second adjustment accounts for the possibility that some event late in the race could affect the outcome or simply that the polls could be wrong by adding random noise to the calculation of the win probabilities to decrease the certainty of the outcome.
+
+Again, these adjustments are described in detail in the 2014 summary. Neither are allowed to change the model’s initial outcome of the race, so if the adjustments cause the probability of a candidate winning to drop below 50 percent, the probability is locked in at 50 percent. After these two adjustments for undecided voters and unknown events, we consider the win probabilities on those Senate races final.
+
+Finally, the model calculates the probability of Democrats winning 51 or more seats in the Senate by simulating the election 100,000 times. The probability of a Democratic takeover of the Senate that HuffPost reports is the proportion of times that the Democrats win 51 or more seats in these simulations. The probability of a tie is the proportion of times the seat count landed at 50-50.
