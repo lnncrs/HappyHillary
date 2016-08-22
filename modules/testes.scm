@@ -16,10 +16,11 @@
 (define excl-chars '(#\b #\c))
 
 (define (run ls)
-    (if(not (null? ls))
-        (car ls)
-        (run (cdr ls))
-))
+    (if (not (null? ls))
+        (begin
+            (display (car ls))
+            (run (cdr ls)))
+        '()))
 
 (run chars)
 
