@@ -5,17 +5,6 @@
 --arquivos de texto para análise
 --==================================================
 
---==================================================
---Importante
---ao final da linha na saída é possível encontrar
---o parâmetro "-c -C 65001'" que permite ao banco
---exportar em formato utf-8, antes usamos o parâmetro
---"-w" mas além de gerar arquivos muito maiores, a
---codificação não dava resultados limpos no scheme
---a opção de exportar em utf-8 como saída é suportada
---no SQL Server 2014 sp2 e acima
---==================================================
-
 use [happy]
 
 --insira o nome do seu <servidor>\<instância> ou <servidor> para instância padrão
@@ -33,21 +22,21 @@ group by datepart(year,[MetadataDateReleased]),datepart(month,[MetadataDateRelea
 order by datepart(year,[MetadataDateReleased]),datepart(month,[MetadataDateReleased])
 
 --assunto de email dividido pelo mês de vazamento
-select 'bcp "select [ExtractedSubject] from [dbo].[vw_leak_subj] where year = '+convert(nvarchar(50),datepart(year,[MetadataDateReleased]))+' and month = '+convert(nvarchar(50),datepart(month,[MetadataDateReleased]))+'" queryout "leak/leak_subj_'+convert(nvarchar(50),datepart(year,[MetadataDateReleased]))+dbo.fn_month(convert(nvarchar(50),datepart(month,[MetadataDateReleased])))+'.txt" -S '+@server+' '+@auth+' -d happy -c -C 65001'
+select 'bcp "select [ExtractedSubject] from [dbo].[vw_leak_subj] where year = '+convert(nvarchar(50),datepart(year,[MetadataDateReleased]))+' and month = '+convert(nvarchar(50),datepart(month,[MetadataDateReleased]))+'" queryout "leak/leak_subj_'+convert(nvarchar(50),datepart(year,[MetadataDateReleased]))+dbo.fn_month(convert(nvarchar(50),datepart(month,[MetadataDateReleased])))+'.txt" -S '+@server+' '+@auth+' -d happy -w'
 from [dbo].[Emails]
 where datepart(year,[MetadataDateReleased]) >= 2008
 group by datepart(year,[MetadataDateReleased]),datepart(month,[MetadataDateReleased])
 order by datepart(year,[MetadataDateReleased]),datepart(month,[MetadataDateReleased])
 
 --corpo de email dividido pelo mês de envio
-select 'bcp "select [ExtractedBodyText] from [dbo].[vw_sent_mail] where year = '+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+' and month = '+convert(nvarchar(50),datepart(month,[MetadataDateSent]))+'" queryout "sent/sent_mail_'+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+dbo.fn_month(convert(nvarchar(50),datepart(month,[MetadataDateSent])))+'.txt" -S '+@server+' '+@auth+' -d happy -c -C 65001'
+select 'bcp "select [ExtractedBodyText] from [dbo].[vw_sent_mail] where year = '+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+' and month = '+convert(nvarchar(50),datepart(month,[MetadataDateSent]))+'" queryout "sent/sent_mail_'+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+dbo.fn_month(convert(nvarchar(50),datepart(month,[MetadataDateSent])))+'.txt" -S '+@server+' '+@auth+' -d happy -w'
 from [dbo].[Emails]
 where datepart(year,[MetadataDateSent]) >= 2008
 group by datepart(year,[MetadataDateSent]),datepart(month,[MetadataDateSent])
 order by datepart(year,[MetadataDateSent]),datepart(month,[MetadataDateSent])
 
 --assunto de email dividido pelo mês de envio
-select 'bcp "select [ExtractedSubject] from [dbo].[vw_sent_subj] where year = '+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+' and month = '+convert(nvarchar(50),datepart(month,[MetadataDateSent]))+'" queryout "sent/sent_subj_'+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+dbo.fn_month(convert(nvarchar(50),datepart(month,[MetadataDateSent])))+'.txt" -S '+@server+' '+@auth+' -d happy -c -C 65001'
+select 'bcp "select [ExtractedSubject] from [dbo].[vw_sent_subj] where year = '+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+' and month = '+convert(nvarchar(50),datepart(month,[MetadataDateSent]))+'" queryout "sent/sent_subj_'+convert(nvarchar(50),datepart(year,[MetadataDateSent]))+dbo.fn_month(convert(nvarchar(50),datepart(month,[MetadataDateSent])))+'.txt" -S '+@server+' '+@auth+' -d happy -w'
 from [dbo].[Emails]
 where datepart(year,[MetadataDateSent]) >= 2008
 group by datepart(year,[MetadataDateSent]),datepart(month,[MetadataDateSent])

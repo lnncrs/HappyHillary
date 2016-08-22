@@ -3,7 +3,7 @@
 (require-extension srfi-13)
 
 ; h é comum isolado pois se refere a prórpia, por isso foi excluido
-(define excl-words '("the" "fw:" "re:" "fvv:" "fwd:" "h:" "these" "or" "and" "for" "to" "are" "they"))
+(define excl-words '("the" "fw:" "re:" "fvv:" "fwd:" "h:" "these" "or" "and" "for" "to" "are" "they" "that"))
 
 ;não tiramos o ":" por causa das horas, verificar
 (define excl-chars '(#\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
@@ -24,3 +24,16 @@
 (define (excl-list ls)
     (filter-list ls excl-words)
 )
+
+;injeta um trecho de código em um modelo com tag pré-definida 
+(define (string-inject model tag inject)
+(let  (
+      ;(model "the #tag# is here")
+      ;(tag "#tag#")
+      ;(inject "mayor")
+      (pos (string-contains model tag))
+      )
+    (if(number? pos)
+        (string-replace model inject pos (+ pos (string-length inject)))
+        #f)
+))
