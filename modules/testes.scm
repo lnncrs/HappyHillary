@@ -1,8 +1,7 @@
 
 (require-extension srfi-1)
 (require-extension srfi-13)
-
-;(load-relative "lib/utils.scm")
+(load-relative "lib/utils.scm")
 ;(load-relative "modules/io/reader.scm")
 ;(load-relative "modules/workers/counter.scm")
 
@@ -21,7 +20,7 @@
         '())
 )
 
-(display (run chars))
+(display (filter (lambda (x) (not (member? x excl-chars))) chars))
 
 ;(string-replace "the #tag# is here" "mayor" 4 9)
 ;(string-count "mayor" 0 #t)

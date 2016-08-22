@@ -23,7 +23,7 @@
    ((equal? x (car ls)) #t)
    (else (member x (cdr ls)))))
 
-;filtre a lista ls com a lista le 
+;filtre a lista ls com a lista le
 (define (filter-list ls le)
     (filter (lambda (x) (not (member? x excl-words))) ls))
 
@@ -44,3 +44,10 @@
         (string-replace model inject pos (+ pos (string-length inject)))
         #f)
 ))
+
+;cria uma lista com outra lista (uso futuro)
+(define (run ls)
+    (if (not (null? ls))
+        (cons (car ls) (run (cdr ls)))
+        '())
+)
