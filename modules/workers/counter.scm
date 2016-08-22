@@ -10,7 +10,7 @@
                         (if (equal? w (car l))
                             (count (cdr l) w (+ s 1))
                             (count (cdr l) w s)))))
-              (unique
+              (unique 
                 (lambda (l)
                         (cond 
                             ((null? l) '())
@@ -28,13 +28,17 @@
 (define a (cons 'la (cons 'la (cons 'b (cons 'c '())))))
 (define b (cons 'a (cons 'c (cons 'e (cons 'a (cons 'a (cons 'a (cons 'b (cons 'c (cons 'd (cons 'd (cons 'c (cons 'c (cons 'e (cons 'e '())))))))))))))))
 
-;(load "/home/gmurayama/HappyHillary/modules/io/read-file.scm")
-(load "C:\\Users\\lenin\\Documents\\Projects\\ufabc-pp-happyhillary\\modules\\io\\read-file.scm")
+(load "/home/gmurayama/HappyHillary/modules/io/read-file.scm")
+;(load "C:\\Users\\lenin\\Documents\\Projects\\ufabc-pp-happyhillary\\modules\\io\\read-file.scm")
 
-;(define txt (reader "/home/gmurayama/HappyHillary/modules/io/a.txt"))
-(define txt (reader "C:\\Users\\lenin\\Documents\\Projects\\ufabc-pp-happyhillary\\data\\test\\leak_subj_201505-ansi.txt"))
+(define txt (reader "/home/gmurayama/HappyHillary/data/test/huff.txt"))
+;(define txt (reader "C:\\Users\\lenin\\Documents\\Projects\\ufabc-pp-happyhillary\\data\\test\\leak_subj_201505-ansi.txt"))
 
-(count-list txt)
+(define counted (count-list txt))
+
+(load "/home/gmurayama/HappyHillary/modules/io/write-file.scm")
+(writer "/home/gmurayama/HappyHillary/modules/io/output-content.json" counted)
+
 
 
 
