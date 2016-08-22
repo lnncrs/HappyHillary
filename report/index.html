@@ -8,6 +8,7 @@
 
     <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="bower_components/jqcloud2/dist/jqcloud.css" rel="stylesheet">
     <link href="content/site.css" rel="stylesheet" />
 
     <style>
@@ -17,6 +18,11 @@
             -ms-user-select: none;
         }
     </style>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
+    <script src="bower_components/jqcloud2/src/jqcloud.js"></script>
 </head>
 <body>
 
@@ -33,9 +39,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                <ul class="nav navbar-nav">
-
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </nav>
@@ -49,21 +53,55 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center">Envios por mês</h3>
+                <h3 class="text-center">Envios por mês (data do envio)</h3>
                 <canvas id="ChartLine01" height="50"></canvas>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center">Vazamentos por mês</h3>
+                <h3 class="text-center">Vazamentos por mês (data do vazemento)</h3>
                 <canvas id="ChartLine02" height="50"></canvas>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12" style="height:15px;">
-                grafico em barras de cloud
+            <div class="col-md-3" style="height:15px;">
+
+                <div id="demo"></div>
+
+                <style>
+                    #demo {
+                        width: 80%;
+                    }
+                </style>
+
+                <script type="text/javascript">
+
+                    var words = [
+                      { text: "Lorem", weight: 13 },
+                      { text: "Ipsum", weight: 10.5 },
+                      { text: "Dolor", weight: 9.4 },
+                      { text: "Sit", weight: 8 },
+                      { text: "Amet", weight: 6.2 },
+                      { text: "Consectetur", weight: 5 },
+                      { text: "Adipiscing", weight: 5 },
+                      /* ... */
+                    ];
+
+                    $('#demo').jQCloud(words);
+
+                </script>
+
+            </div>
+            <div class="col-md-3" style="height:15px;">
+                B
+            </div>
+            <div class="col-md-3" style="height:15px;">
+                C
+            </div>
+            <div class="col-md-3" style="height:15px;">
+                D
             </div>
         </div>
 
@@ -79,10 +117,6 @@
             </p>
         </footer>
     </div>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
 
     <script type="text/javascript">
 

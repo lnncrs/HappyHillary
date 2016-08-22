@@ -6,7 +6,7 @@
     ],
     datasets: [
         {
-            label: "Emails vazados",
+            label: "Emails enviados",
             pointStyle: "circle",
             pointRadius: 3,
             pointHoverRadius: 5,
