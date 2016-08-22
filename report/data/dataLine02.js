@@ -1,6 +1,8 @@
 ﻿var dataLine02 = {
     labels: [
+
         "05/15", "06/15", "07/15", "08/15"
+
     ],
     datasets: [
         {
@@ -14,7 +16,9 @@
             //pointBackgroundColor: "rgba(151,187,205,1)",
             //pointBorderColor: "#fff",
             data: [
+
                 296, 1925, 1356, 4368
+
             ]
         },
         {
@@ -28,7 +32,9 @@
             //pointBackgroundColor: "rgba(238,143,139,1)",
             //pointBorderColor: "#fff",
             data: [
+
                 111, 118, 158, 151
+
             ]
         }
     ]

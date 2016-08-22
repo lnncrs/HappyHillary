@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -26,24 +26,66 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                <ul class="nav navbar-nav"></ul>
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="index.html">Linha do tempo</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="cloud.html">Tag Clouds</a>
+                    </li>
+
+                </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid body-content">
+    <section class="container-fluid body-content">
 
         <h2>
-            <i class="fa fa-line-chart" aria-hidden="true"></i> Relatório
+            <i class="fa fa-cloud" aria-hidden="true"></i> Tag Clouds
         </h2>
         <hr />
 
         <div class="row">
-            <div id="tagcloud" class="col-md-12" style="height:500px;">
+            <div class="col-md-12">
+                <h3 class="text-center">Assunto (data do vazamento)</h3>
+                <!--#subj-begin#-->
+                <div class="col-md-3">
+                    <div id="tg_subj_201505" style="height:500px;"></div>
+                    <h4 class="tgLabel">Mar/2015</h4>
+                </div>
+                <div class="col-md-3">
+                    <div id="tg_subj_201506" style="height:500px;"></div>
+                    <h4 class="tgLabel">Abr/2015</h4>
+                </div>
+                <div class="col-md-3">
+                    <div id="tg_subj_201507" style="height:500px;"></div>
+                    <h4 class="tgLabel">Mai/2015</h4>
+                </div>
+                <div class="col-md-3">
+                    <div id="tg_subj_201508" style="height:500px;"></div>
+                    <h4 class="tgLabel">Jun/2015</h4>
+                </div>
+                <!--#subj-end#-->
             </div>
         </div>
 
-    </div>
+        <!--
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Corpo (data do vazamento)</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Imprensa (data do vazamento)</h3>
+            </div>
+        </div>
+        -->
+
+    </section>
 
     <aside></aside>
 
@@ -59,9 +101,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
-    <script src="data.js"></script>
-    <script type="text/javascript">
-        $('#tagcloud').jQCloud(words);
-    </script>
+
+    <script src="data/dataTagData.js"></script>
+    <script src="data/dataTagCall.js"></script>
 </body>
 </html>

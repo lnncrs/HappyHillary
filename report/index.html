@@ -18,15 +18,10 @@
             -ms-user-select: none;
         }
     </style>
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
-    <script src="bower_components/jqcloud2/src/jqcloud.js"></script>
 </head>
 <body>
 
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -39,7 +34,17 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                <ul class="nav navbar-nav"></ul>
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="index.html">Linha do tempo</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="cloud.html">Tag Clouds</a>
+                    </li>
+
+                </ul>
             </div>
         </div>
     </nav>
@@ -47,7 +52,7 @@
     <section class="container-fluid body-content">
 
         <h2>
-            <i class="fa fa-line-chart" aria-hidden="true"></i> Relatório
+            <i class="fa fa-line-chart" aria-hidden="true"></i> Linha do tempo
         </h2>
         <hr />
 
@@ -118,6 +123,14 @@
         </footer>
     </div>
 
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
+    <script src="bower_components/jqcloud2/src/jqcloud.js"></script>
+
+    <script src="data/dataLine01.js"></script>
+    <script src="data/dataLine02.js"></script>
+
     <script type="text/javascript">
 
         var randomAbsScalingFactor = function () {
@@ -135,14 +148,6 @@
         var randomColor = function () {
             return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
         };
-
-    </script>
-
-    <script src="data/dataLine01.js"></script>
-
-    <script src="data/dataLine02.js"></script>
-
-    <script type="text/javascript">
 
         window.onload = function () {
 
@@ -182,6 +187,5 @@
         };
 
     </script>
-
 </body>
 </html>
