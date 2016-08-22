@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Happy Hillary" />
+    <title>Happy Hillary</title>
+
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="bower_components/jqcloud2/dist/jqcloud.css" rel="stylesheet">
+    <link href="content/site.css" rel="stylesheet" />
+
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Abrir menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Happy Hillary</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="index.html">Linha do tempo</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="cloud.html">Tag Clouds</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container-fluid body-content">
+
+        <h2>
+            <i class="fa fa-line-chart" aria-hidden="true"></i> Linha do tempo
+        </h2>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Envios por mês (data do envio)</h3>
+                <canvas id="ChartLine01" height="50"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Vazamentos por mês (data do vazemento)</h3>
+                <canvas id="ChartLine02" height="50"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" style="height:15px;">
+
+                <div id="demo"></div>
+
+                <style>
+                    #demo {
+                        width: 80%;
+                    }
+                </style>
+
+                <script type="text/javascript">
+
+                    var words = [
+                      { text: "Lorem", weight: 13 },
+                      { text: "Ipsum", weight: 10.5 },
+                      { text: "Dolor", weight: 9.4 },
+                      { text: "Sit", weight: 8 },
+                      { text: "Amet", weight: 6.2 },
+                      { text: "Consectetur", weight: 5 },
+                      { text: "Adipiscing", weight: 5 },
+                      /* ... */
+                    ];
+
+                    $('#demo').jQCloud(words);
+
+                </script>
+
+            </div>
+            <div class="col-md-3" style="height:15px;">
+                B
+            </div>
+            <div class="col-md-3" style="height:15px;">
+                C
+            </div>
+            <div class="col-md-3" style="height:15px;">
+                D
+            </div>
+        </div>
+
+    </section>
+
+    <aside></aside>
+
+    <div class="container-fluid">
+        <footer class="navbar navbar-fixed-bottom bg-gray">
+            <p class="text-muted">
+                <hr />
+                &ensp;&ensp;Happy Hillary 2016
+            </p>
+        </footer>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
+    <script src="bower_components/jqcloud2/src/jqcloud.js"></script>
+
+    <script src="data/dataLine01.js"></script>
+    <script src="data/dataLine02.js"></script>
+
+    <script type="text/javascript">
+
+        var randomAbsScalingFactor = function () {
+            return Math.abs((Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100));
+        };
+
+        var randomScalingFactor = function () {
+            return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+        };
+
+        var randomColorFactor = function () {
+            return Math.round(Math.random() * 255);
+        };
+
+        var randomColor = function () {
+            return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
+        };
+
+        window.onload = function () {
+
+            Chart.defaults.global.responsive = true;
+            Chart.defaults.global.animate = true;
+
+            var ctx1 = document.getElementById("ChartLine01").getContext("2d");
+            window.myLineChart = new Chart(ctx1, {
+                type: 'line',
+                data: dataLine01/*,
+                options: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Bar Chart'
+                    }
+                }*/
+            });
+
+            var ctx2 = document.getElementById("ChartLine02").getContext("2d");
+            window.myLineChart = new Chart(ctx2, {
+                type: 'line',
+                data: dataLine02/*,
+                options: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Bar Chart'
+                    }
+                }*/
+            });
+
+        };
+
+    </script>
+</body>
+</html>
