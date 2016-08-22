@@ -49,8 +49,15 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center">Vazamentos por mês</h3>
+                <h3 class="text-center">Envios por mês</h3>
                 <canvas id="ChartLine01" height="50"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Vazamentos por mês</h3>
+                <canvas id="ChartLine02" height="50"></canvas>
             </div>
         </div>
 
@@ -95,37 +102,13 @@
             return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
         };
 
-        var dataLine01 = {
-            labels: [
-                "fev/15", "mar/15", "abr/15", "mai/15", "jun/15", "jul/15", "ago/15", "set/15", "out/15", "nov/15", "dez/15", "jan/16", "fev/16", "mar/16", "abr/16"
-            ],
-            datasets: [
-                {
-                    label: "Válidos",
-                    pointStyle: "circle",
-                    pointRadius: 3,
-                    pointHoverRadius: 5,
-                    //lineTension: 0,
-                    backgroundColor: "rgba(151,187,205,0.2)",
-                    //borderColor: "rgba(151,187,205,1)",
-                    //pointBackgroundColor: "rgba(151,187,205,1)",
-                    //pointBorderColor: "#fff",
-                    data: [126, 119, 79, 86, 89, 94, 106, 124, 143, 155, 160, 175, 181, 189, 192]
-                },
-                {
-                    label: "Vencidos",
-                    pointStyle: "circle",
-                    pointRadius: 3,
-                    pointHoverRadius: 5,
-                    //lineTension: 0,
-                    backgroundColor: "rgba(238,143,139,0.2)",
-                    //borderColor: "rgba(238,143,139,1)",
-                    //pointBackgroundColor: "rgba(238,143,139,1)",
-                    //pointBorderColor: "#fff",
-                    data: [111, 118, 158, 151, 148, 143, 131, 113, 94, 82, 77, 62, 56, 48, 45]
-                }
-            ]
-        };
+    </script>
+
+    <script src="data/dataLine01.js"></script>
+
+    <script src="data/dataLine02.js"></script>
+
+    <script type="text/javascript">
 
         window.onload = function () {
 
@@ -136,6 +119,21 @@
             window.myLineChart = new Chart(ctx1, {
                 type: 'line',
                 data: dataLine01/*,
+                options: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Bar Chart'
+                    }
+                }*/
+            });
+
+            var ctx2 = document.getElementById("ChartLine02").getContext("2d");
+            window.myLineChart = new Chart(ctx2, {
+                type: 'line',
+                data: dataLine02/*,
                 options: {
                     legend: {
                         position: 'top',
