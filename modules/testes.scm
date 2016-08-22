@@ -9,11 +9,12 @@
 (load-relative "modules/io/reader.scm")
 (load-relative "modules/workers/counter.scm")
 
-(define txt (reader "data/test/leak_subj_201505.txt"))
+;(define txt (reader "data/test/leak_subj_201505.txt"))
+(define txt (reader "modules/io/test.txt"))
+(write txt)
 (define ftxt (excl-list txt))
 
 (define counted (count-list ftxt))
-(display counted)
 
 ;(string-replace "the #tag# is here" "mayor" 4 9)
 ;(string-count "mayor" 0 #t)
