@@ -10,7 +10,7 @@
                             (let f ()
                             (let ((c (read-char port)))
                                 (cond
-                                    ((or (or (eof-object? c) (equal? c '\#n)) (equal? c '\#space)) '())
+                                    ((or (or (eof-object? c) (equal? c '#\newline)) (equal? c '#\space)) '())
                                     ;((not (or (or (or (or (equal? c '#\newline) (equal? c '#\space')) (equal? c '#\.')) (equal? c '#\,)) (equal? c '#\-)))
                                     ((not (excl-chars? c))
                                     (cons c (f)))
