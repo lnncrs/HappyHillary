@@ -9,8 +9,8 @@
 ;; representation, but the written representation is incomplete and therefore not parsable, an error
 ;; is signalled. 
 
-(require-extension srfi-13)
 (require-extension srfi-1)
+(require-extension srfi-13)
 
 (define reader
     (lambda (path)
