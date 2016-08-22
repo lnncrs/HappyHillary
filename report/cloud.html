@@ -6,40 +6,16 @@
     <meta name="description" content="Happy Hillary" />
     <title>Happy Hillary</title>
 
-    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="bower_components/jqcloud2/dist/jqcloud.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="content/site.css" rel="stylesheet" />
+
+    <link href="bower_components/jqcloud2/dist/jqcloud.css" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                    <span class="sr-only">Abrir menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Happy Hillary</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                <ul class="nav navbar-nav">
-
-                    <li class="dropdown">
-                        <a href="index.html">Linha do tempo</a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="cloud.html">Tag Clouds</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!--header-->
+    <div w3-include-html="_header.html"></div>
 
     <section class="container-fluid body-content">
 
@@ -87,22 +63,25 @@
 
     </section>
 
-    <aside></aside>
-
-    <div class="container-fluid">
-        <footer class="navbar navbar-fixed-bottom bg-gray">
-            <p class="text-muted">
-                <hr />
-                &ensp;&ensp;Happy Hillary 2016
-            </p>
-        </footer>
-    </div>
+    <!--footer-->
+    <div w3-include-html="_footer.html"></div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="scripts/w3data.js"></script>
+
+    <!--jqcloud.js-->
     <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
 
+    <!--data-->
     <script src="data/dataTagData.js"></script>
     <script src="data/dataTagCall.js"></script>
+
+    <!--misc & call-->
+    <script type="text/javascript">
+
+        w3IncludeHTML();
+
+    </script>
 </body>
 </html>
