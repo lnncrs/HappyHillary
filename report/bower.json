@@ -1,0 +1,18 @@
+{
+  "name": "happyhillary",
+  "homepage": "https://github.com/lnncrs/HappyHillary",
+  "authors": [
+    "gustavo murayama <g_murayama@hotmail.com>",
+    "lenin cristi <lenincristi@gmail.com>"
+  ],
+  "description": "Functional programming driven data analysis project about Hillary Clinton's mail data leaked in 2016.",
+  "main": "",
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
