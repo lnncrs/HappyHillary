@@ -9,6 +9,9 @@
 ;; representation, but the written representation is incomplete and therefore not parsable, an error
 ;; is signalled. 
 
+(require-extension srfi-13)
+(require-extension srfi-1)
+
 (define reader
     (lambda (path)
         (let ((port (open-input-file path)))
@@ -28,13 +31,5 @@
                     (lambda ()
                       (if (eof-object? (peek-char port))
                         '()
-                        (cons (word) (list))))))
+                        (cons (string-downcase (word)) (list))))))
             (list)))))
-                            
-
-                
-
-
-            ;(let rdr ((c (read-char port)))
-            ;    (if (eof-object? c)
-                     
