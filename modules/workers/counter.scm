@@ -37,7 +37,7 @@
 (define counted (count-list txt))
 
 (load "/home/gmurayama/HappyHillary/modules/io/write-file.scm")
-(writer "/home/gmurayama/HappyHillary/modules/io/output-content.json" counted)
+(writer "/home/gmurayama/HappyHillary/modules/io/output-content.js" counted)
 
 
 

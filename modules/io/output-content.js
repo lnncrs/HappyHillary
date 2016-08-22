@@ -577,6 +577,5 @@ var words = [
 { text: "count", weight: 1 },
 { text: "landed", weight: 1 },
 { text: "at", weight: 6 },
-{ text: "50-50", weight: 1 },
-{ text: "", weight: 165}
+{ text: "50-50", weight: 1 }
 ];
