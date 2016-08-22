@@ -22,7 +22,7 @@
                             (display " }" port)
                             (newline port)
                             (f (cdr ls)))
-                        (if (not (or (or (or (equal? (caar ls) "the") (equal? (caar ls) "these")) (equal? (caar ls) "or")) (equal? (caar ls) "and")))
+                        (if (not (or (or (or (or (or (or (equal? (caar ls) "the") (equal? (caar ls) "these")) (equal? (caar ls) "or")) (equal? (caar ls) "and")) (equal? (caar ls) "for")) (equal? (caar ls) "to")) (equal? (caar ls) "are")))
                             (begin
                                 (display "{ text: " port)
                                 (write (caar ls) port)

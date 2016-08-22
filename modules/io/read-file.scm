@@ -23,7 +23,7 @@
                             (let ((c (read-char port)))
                                 (cond
                                     ((eof-object? c) '())
-                                    ((not (or (or (or (equal? c '#\newline) (equal? c '#\space')) (equal? c '#\.')) (equal? c '#\,)))
+                                    ((not (or (or (or (or (equal? c '#\newline) (equal? c '#\space')) (equal? c '#\.')) (equal? c '#\,)) (equal? c '#\-)))
                                     ;(read-char port)
                                     (cons c (f)))
                                     (else '())))))))
