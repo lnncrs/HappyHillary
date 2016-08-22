@@ -17,12 +17,11 @@
 
 (define (run ls)
     (if (not (null? ls))
-        (begin
-            (display (car ls))
-            (run (cdr ls)))
-        '()))
+        (cons (car ls) (run (cdr ls)))
+        '())
+)
 
-(run chars)
+(display (run chars))
 
 ;(string-replace "the #tag# is here" "mayor" 4 9)
 ;(string-count "mayor" 0 #t)
