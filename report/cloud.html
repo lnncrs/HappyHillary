@@ -6,7 +6,7 @@
     <meta name="description" content="Happy Hillary" />
     <title>Happy Hillary</title>
 
-    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap-simplex.css" rel="stylesheet" />
     <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="content/site.css" rel="stylesheet" />
 
@@ -26,8 +26,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-center">Assunto (data do vazamento)</h3>
-                <!--#subj-begin#-->
+                <h3 class="text-center">Palavras no assunto do email (data do vazamento)</h3>
                 <div class="col-md-3">
                     <div id="tg_subj_201505" style="height:500px;"></div>
                     <h4 class="tgLabel">Mar/2015</h4>
@@ -44,7 +43,6 @@
                     <div id="tg_subj_201508" style="height:500px;"></div>
                     <h4 class="tgLabel">Jun/2015</h4>
                 </div>
-                <!--#subj-end#-->
             </div>
         </div>
 
@@ -68,7 +66,6 @@
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="scripts/w3data.js"></script>
 
     <!--jqcloud.js-->
     <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
@@ -80,8 +77,15 @@
     <!--misc & call-->
     <script type="text/javascript">
 
-        w3IncludeHTML();
+        window.onload = function () {
 
+        };
+
+    </script>
+
+    <script src="scripts/w3data.js"></script>
+    <script type="text/javascript">
+        //w3IncludeHTML();
     </script>
 </body>
 </html>

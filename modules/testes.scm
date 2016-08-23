@@ -14,12 +14,6 @@
 (define chars '(#\a #\b #\c #\d #\e #\f))
 (define excl-chars '(#\b #\c))
 
-(define (run ls)
-    (if (not (null? ls))
-        (cons (car ls) (run (cdr ls)))
-        '())
-)
-
 (display (filter (lambda (x) (not (member? x excl-chars))) chars))
 
 ;(string-replace "the #tag# is here" "mayor" 4 9)
