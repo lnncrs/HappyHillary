@@ -8,6 +8,7 @@
 ;não tiramos o ":" por causa das horas, verificar
 (define excl-chars '(#\@ #\_ #\: #\[ #\] #\. #\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
 
+;testa lista para caracteres excluidos
 (define excl-chars?
     (lambda (c)
         (let e-c? ((ls excl-chars))
@@ -24,24 +25,20 @@
              i
              (loop (cdr li) (+ i 1))))))
 
+;x é membro da lista ls? (obsoleta)
+;(define (member? x ls)
+;  (cond
+;   ((null? ls) #f)
+;   ((equal? x (car ls)) #t)
+;   (else (member x (cdr ls)))))
+
 ;x é membro da lista ls?
-(define (member? x ls)
-  (cond
-   ((null? ls) #f)
-   ((equal? x (car ls)) #t)
-   (else (member x (cdr ls)))))
-
-
 (define (member? x ls)
  (if (null? ls)
   #f
   (if(equal? x (car ls))
    #t
-   (member? x (cdr ls))
-  )
- )
-)
-
+   (member? x (cdr ls)))))
 
 ;filtre a lista ls com a lista le
 (define (filter-list ls le)
