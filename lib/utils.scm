@@ -8,6 +8,7 @@
 ;não tiramos o ":" por causa das horas, verificar
 (define excl-chars '(#\@ #\_ #\: #\[ #\] #\. #\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
 
+;testa lista para caracteres excluidos
 (define excl-chars?
     (lambda (c)
         (let e-c? ((ls excl-chars))
@@ -24,24 +25,20 @@
              i
              (loop (cdr li) (+ i 1))))))
 
+;x é membro da lista ls? (obsoleta)
+;(define (member? x ls)
+;  (cond
+;   ((null? ls) #f)
+;   ((equal? x (car ls)) #t)
+;   (else (member x (cdr ls)))))
+
 ;x é membro da lista ls?
-(define (member? x ls)
-  (cond
-   ((null? ls) #f)
-   ((equal? x (car ls)) #t)
-   (else (member x (cdr ls)))))
-
-
 (define (member? x ls)
  (if (null? ls)
   #f
   (if(equal? x (car ls))
    #t
-   (member? x (cdr ls))
-  )
- )
-)
-
+   (member? x (cdr ls)))))
 
 ;filtre a lista ls com a lista le
 (define (filter-list ls le)
@@ -51,6 +48,14 @@
 (define (excl-list ls)
     (filter-list ls excl-words)
 )
+
+;onde na lista ls está o par que tem o segundo item igual a x?
+(define (where? x ls)
+ (if (null? ls)
+  0
+  (if(equal? x (car (car ls)))
+   (cadar ls)
+   (where? x (cdr ls)))))
 
 ;injeta um trecho de código em um modelo com tag pré-definida
 (define (string-inject model tag inject)
