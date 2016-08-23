@@ -16,6 +16,14 @@
                 ((equal? c (car excl-chars)) #t)
                 (else (e-c? (cdr ls)))))))
 
+;tamanho da lista ls(define lenght?
+(define lenght?
+    (lambda (ls)
+        (let loop ((li ls) (i 0))            
+            (if (null? li)
+             i
+             (loop (cdr li) (+ i 1))))))
+
 ;x é membro da lista ls?
 (define (member? x ls)
   (cond

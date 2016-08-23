@@ -1,4 +1,4 @@
-(define count-list
+(define counter
     (lambda (l)
         (letrec            
             ((count
