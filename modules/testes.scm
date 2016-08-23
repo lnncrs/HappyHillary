@@ -45,10 +45,10 @@
             ))
 
 
-(define data (reader "data/leak/leak_subj_201505.txt"))
+(define data (reader "data/leak/leak_subj_201508.txt"))
 (define data (filter (lambda (x) (not (member? x excl-words))) data))
 (define data (count-list data))
-(define data (filter (lambda (x) (> (car (cdr x)) 3)) data))
+(define data (filter (lambda (x) (> (car (cdr x)) 5)) data))
 
 (write data)
 
