@@ -45,11 +45,10 @@
             ))
 
 
-
-(reader "data/leak/leak_subj_201505.txt")
-
-
-
+(define data (reader "data/leak/leak_subj_201505.txt"))
+(define data (filter (lambda (x) (not (member? x excl-words))) data))
+(define data (count-list data))
+(write data)
 
 ;(define port (open-output-file "report/data/dataTagData.js"))
 
@@ -61,6 +60,10 @@
 ;(map (lambda (x) (writer-cloud port fs x)) tags)
 
 ;(close-output-port port)
+
+
+;(define ch '(#\a #\b #\c #\:))
+;(filter (lambda (x) (member? excl-words x)) ch)
 
 
 
