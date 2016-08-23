@@ -45,11 +45,11 @@
             ))
 
 
+(define data (reader "data/leak/leak_subj_201505.txt"))
+(define data (filter (lambda (x) (not (member? x excl-words))) data))
+(define data (count-list data))
 
-(reader "data/leak/leak_subj_201505.txt")
-
-
-
+(write data)
 
 ;(define port (open-output-file "report/data/dataTagData.js"))
 
