@@ -15,5 +15,3 @@ GO
 
 ALTER DATABASE [happy] SET  READ_WRITE 
 GO
-
-

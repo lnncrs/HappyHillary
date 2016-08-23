@@ -4,7 +4,6 @@
 (load-relative "lib/utils.scm")
 (load-relative "modules/io/reader.scm")
 (load-relative "modules/workers/counter.scm")
-;(load-relative "modules/io/writer-cloud.scm")
 
 (define writer-cloud
     (lambda (port values set)
@@ -45,43 +44,23 @@
             ;)
             ))
 
-(define port (open-output-file "report/data/dataTagData.js"))
+
+
+(reader "data/leak/leak_subj_201505.txt")
+
+
+
+
+;(define port (open-output-file "report/data/dataTagData.js"))
 
 ;(define ls '((apple 1) (orange 3) (uva 7) (ameixa 1) (abacaxi 3)))
+;(define fs (filter (lambda (x) (> (car (cdr x)) 1)) ls))
 
-(define fs (filter (lambda (x) (> (car (cdr x)) 1)) ls))
+;(define tags '("tg_r01g01_data" "tg_r01g02_data" "tg_r01g03_data" "tg_r01g04_data"))
 
-(writer-cloud port fs "tg_r01g01_data")
-(close-output-port port)
+;(map (lambda (x) (writer-cloud port fs x)) tags)
 
-;(writer-cloud "report/linear2.html" fs "tg_r01g01_data")
+;(close-output-port port)
 
-;(define x '(apple 1))
-;(car (cdr (car ls)))
-;(car (cdr x))
-;(equal? (car (cdr x)) (car (cdr (car ls))) )
-;(equal? (cons 'apple (cons 1 '())) (cons 'apple (cons 1 '())))
 
-;(car ls)
-;(cdr ls)
-;(car (car ls))
-;(car (cdr (car ls)))
-;(caar ls)
-;(cadar ls)
 
-;(use utils)
-;(read-all "report/_models/linear.html")
-;(string-inject (read-all "report/_models/cloud.html") "##r01_title##" "Palavras no assunto do email (data do vazamento)")
-
-;(define in (open-input-file "report/_models/linear.html"))
-;(define out (open-output-file "report/linear2.html"))
-
-;(display (read-line in) out)
-;(newline out)
-
-;(close-output-port out)
-;(close-input-port in)
-
-;(string-replace "the #tag# is here" "mayor" 4 9)
-;(string-count "mayor" 0 #t)
-;(string-inject "the #tag# is here" "#tag#" "mayor")

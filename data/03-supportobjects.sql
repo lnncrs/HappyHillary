@@ -26,6 +26,24 @@ BEGIN
 END
 GO
 
+--função simples de suporte para adicionar um terminador a cada linha exportada
+if exists(select * from sys.objects where name = 'fn_term')
+begin
+	drop function fn_term
+end
+GO
+CREATE FUNCTION fn_term
+(
+	@i int = 0
+)
+RETURNS nvarchar(50)
+AS
+BEGIN
+
+	RETURN (char(13) + char(10) + '---' + char(13) + char(10))
+END
+GO
+
 --views de suporte para geração dos arquivos
 if exists(select * from sys.objects where name = 'vw_leak_mail')
 begin
