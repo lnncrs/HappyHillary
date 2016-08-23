@@ -11,10 +11,17 @@
 ;(define ftxt (excl-list txt))
 ;(define counted (count-list ftxt))
 
-(define chars '(#\a #\b #\c #\d #\e #\f))
-(define excl-chars '(#\b #\c))
+;(use utils)
+;(read-all "report/_models/linear.html")
 
-(display (filter (lambda (x) (not (member? x excl-chars))) chars))
+(define in (open-input-file "report/_models/linear.html"))
+(define out (open-output-file "report/linear2.html"))
+
+(display (read-line in) out)
+(newline out)
+
+(close-output-port out)
+(close-input-port in)
 
 ;(string-replace "the #tag# is here" "mayor" 4 9)
 ;(string-count "mayor" 0 #t)
