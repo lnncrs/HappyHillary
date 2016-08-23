@@ -40,7 +40,8 @@ RETURNS nvarchar(50)
 AS
 BEGIN
 
-	RETURN (char(13) + char(10) + '---' + char(13) + char(10))
+	--RETURN (char(13) + char(10) + '---' + char(13) + char(10))
+	RETURN (char(13) + ' --- ' + char(13))
 END
 GO
 
