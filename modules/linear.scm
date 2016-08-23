@@ -30,7 +30,7 @@
               )
               (loop (cdr sl))))))
 
-(define port (open-output-file "report/data/dataLine03.js"))
+(define port (open-output-file "report/data/dataLine02.js"))
 
 (display "var dataLine02 = {
     labels: [
