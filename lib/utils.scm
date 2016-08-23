@@ -3,7 +3,7 @@
 (require-extension srfi-13)
 
 ; h é comum isolado pois se refere a prórpia, por isso foi excluido
-(define excl-words '("---" "what" "says" "i" "your" "that" "this" "yet" "is" "s" "by" "who" "was" "when" "do" "any" "so" "as" "--" "-" "a" "an" "at" "you" "got" "on" "in" "from" "hey" "of" "\r" "" "the" "fw" "fw:" "re" "re:" "fvv" "fvv:" "fwd" "fwd:" "these" "or" "and" "for" "to" "are" "they" "that"))
+(define excl-words '("what" "says" "i" "your" "that" "this" "yet" "is" "s" "by" "who" "was" "when" "do" "any" "so" "as" "--" "-" "a" "an" "at" "you" "got" "on" "in" "from" "hey" "of" "\r" "" "the" "fw" "fw:" "re" "re:" "fvv" "fvv:" "fwd" "fwd:" "these" "or" "and" "for" "to" "are" "they" "that"))
 
 ;não tiramos o ":" por causa das horas, verificar
 (define excl-chars '(#\@ #\_ #\: #\[ #\] #\. #\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
@@ -30,6 +30,18 @@
    ((null? ls) #f)
    ((equal? x (car ls)) #t)
    (else (member x (cdr ls)))))
+
+
+(define (member? x ls)
+ (if (null? ls)
+  #f
+  (if(equal? x (car ls))
+   #t
+   (member? x (cdr ls))
+  )
+ )
+)
+
 
 ;filtre a lista ls com a lista le
 (define (filter-list ls le)
