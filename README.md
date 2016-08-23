@@ -1,6 +1,6 @@
 # HappyHillary
 
-Functional programming driven data analysis project about Hillary Clinton's mail data leaked in 2016. The goal is to cross this info with data from press, social networks and polls.
+Functional programming driven data analysis project about Hillary Clinton's mail data leaked in 2015. The goal is to cross this info with data from press, social networks and polls.
 
 ### But Why?
 

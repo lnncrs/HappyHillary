@@ -11,17 +11,19 @@
 ;(define ftxt (excl-list txt))
 ;(define counted (count-list ftxt))
 
-;(use utils)
+(use utils)
 ;(read-all "report/_models/linear.html")
+(string-inject (read-all "report/_models/cloud.html") "##r01_title##" "Palavras no assunto do email (data do vazamento)")
 
-(define in (open-input-file "report/_models/linear.html"))
-(define out (open-output-file "report/linear2.html"))
 
-(display (read-line in) out)
-(newline out)
+;(define in (open-input-file "report/_models/linear.html"))
+;(define out (open-output-file "report/linear2.html"))
 
-(close-output-port out)
-(close-input-port in)
+;(display (read-line in) out)
+;(newline out)
+
+;(close-output-port out)
+;(close-input-port in)
 
 ;(string-replace "the #tag# is here" "mayor" 4 9)
 ;(string-count "mayor" 0 #t)

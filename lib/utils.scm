@@ -32,7 +32,7 @@
     (filter-list ls excl-words)
 )
 
-;injeta um trecho de código em um modelo com tag pré-definida 
+;injeta um trecho de código em um modelo com tag pré-definida
 (define (string-inject model tag inject)
 (let  (
       ;(model "the #tag# is here")
