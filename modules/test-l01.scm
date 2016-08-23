@@ -96,9 +96,9 @@
 
 
 (define writer-cloud
-    (lambda (port values set)
+    (lambda (port values name)
         ;(let ((port (open-output-file path)))
-            (display (string-append "var " set " = [") port)
+            (display (string-append "var " name " = [") port)
             (newline port)
             (let f ((ls values))
                 (if (null? (cdr ls))
