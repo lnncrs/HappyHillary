@@ -20,7 +20,8 @@
                 296, 1925, 1356, 4368
 
             ]
-        },
+        }
+        /*,
         {
             label: "Total de palavras",
             pointStyle: "circle",
@@ -37,5 +38,6 @@
 
             ]
         }
+        */
     ]
 };
