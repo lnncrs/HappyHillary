@@ -3,10 +3,10 @@
 (require-extension srfi-13)
 
 ; h é comum isolado pois se refere a prórpia, por isso foi excluido
-(define excl-words '("\\r" "" "the" "fw" "fw:" "re" "re:" "fvv" "fvv:" "fwd" "fwd:" "these" "or" "and" "for" "to" "are" "they" "that"))
+(define excl-words '("\r" "" "the" "fw" "fw:" "re" "re:" "fvv" "fvv:" "fwd" "fwd:" "these" "or" "and" "for" "to" "are" "they" "that"))
 
 ;não tiramos o ":" por causa das horas, verificar
-(define excl-chars '(#\@ #\_ #\: #\[ #\] #\. #\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
+(define excl-chars '(#\- #\@ #\_ #\: #\[ #\] #\. #\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
 
 (define excl-chars?
     (lambda (c)
