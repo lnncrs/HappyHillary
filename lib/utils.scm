@@ -49,6 +49,14 @@
     (filter-list ls excl-words)
 )
 
+;onde na lista ls está o par que tem o segundo item igual a x?
+(define (where? x ls)
+ (if (null? ls)
+  0
+  (if(equal? x (car (car ls)))
+   (cadar ls)
+   (where? x (cdr ls)))))
+
 ;injeta um trecho de código em um modelo com tag pré-definida
 (define (string-inject model tag inject)
 (let  (

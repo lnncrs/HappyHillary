@@ -15,7 +15,7 @@
                 ("data/leak/leak_subj_201508.txt" "tg_r01g04_data")
                 ))
 
-(define (writer-cloud-wrapper port files)
+(define (writer-cloud-wrapper port1 port2 files)
         (let loop ((sl files))   
             (if (not (null? sl))
              (begin
@@ -24,19 +24,41 @@
                 ;(write file)
                 ;(write tag)
 
-                
-
                 ;(define data (filter (lambda (x) (> (car (cdr x)) 5))  (counter (filter (lambda (x) (not (member? x excl-words))) (reader file)))))
-                (writer-cloud port (filter (lambda (x) (> (car (cdr x)) 5))  (counter (filter (lambda (x) (not (member? x excl-words))) (reader file)))) tag)
-                
+                (writer-cloud port1 (filter (lambda (x) (> (car (cdr x)) 5))  (counter (filter (lambda (x) (not (member? x excl-words))) (reader file)))) tag)           
+                (display (where? "---" (filter (lambda (x) (> (car (cdr x)) 5))  (counter (filter (lambda (x) (not (member? x excl-words))) (reader file)))) ) port2)
+                (display "," port2)
+                (newline port2)
               )
               (loop (cdr sl))))))
 
-(define port (open-output-file "report/data/dataTagData.js"))
+(define port1 (open-output-file "report/data/dataTagData.js"))
+(define port2 (open-output-file "report/data/dataLine03.js"))
 
-(writer-cloud-wrapper port files)
+(display "var dataLine02 = {
+    labels: [
 
-(close-output-port port)
+        \"05/15\", \"06/15\", \"07/15\", \"08/15\"
+
+    ],
+    datasets: [
+        {
+            label: \"Emails vazados\",
+            pointStyle: \"circle\",
+            pointRadius: 3,
+            pointHoverRadius: 5,
+            backgroundColor: \"rgba(151,187,205,0.2)\",
+            data: [" port2)
+
+(writer-cloud-wrapper port1 port2 files)
+
+(display "]
+        }
+    ]
+};" port2)
+
+(close-output-port port1)
+(close-output-port port2)
 
 
 
