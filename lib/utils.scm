@@ -6,7 +6,7 @@
 (define excl-words '("\\r" "" "the" "fw" "fw:" "re" "re:" "fvv" "fvv:" "fwd" "fwd:" "these" "or" "and" "for" "to" "are" "they" "that"))
 
 ;não tiramos o ":" por causa das horas, verificar
-(define excl-chars '(#\_ #\: #\[ #\] #\. #\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
+(define excl-chars '(#\@ #\_ #\: #\[ #\] #\. #\! #\? #\' #\“ #\” #\, #\; #\( #\) #\&))
 
 (define excl-chars?
     (lambda (c)
