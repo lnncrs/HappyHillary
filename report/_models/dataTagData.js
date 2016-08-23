@@ -1,5 +1,6 @@
 var tg_r01g01_data = [
 
+    //sample line format: { text: "biggest", weight: 4 },
     ##r01g01_data##
 
 ];
