@@ -41,7 +41,8 @@ AS
 BEGIN
 
 	--RETURN (char(13) + char(10) + '---' + char(13) + char(10))
-	RETURN (char(13) + ' --- ' + char(13))
+	--RETURN (char(13) + ' --- ' + char(13))
+	RETURN (char(10) + ' --- ' + char(10))
 END
 GO
 
