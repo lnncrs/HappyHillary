@@ -50,6 +50,11 @@
 (define data (count-list data))
 (write data)
 
+;(define ch #\:)
+;(display (member? ch excl-chars))
+
+
+
 ;(define port (open-output-file "report/data/dataTagData.js"))
 
 ;(define ls '((apple 1) (orange 3) (uva 7) (ameixa 1) (abacaxi 3)))
