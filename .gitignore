@@ -2,7 +2,6 @@
 
 # Created by https://www.gitignore.io/api/scheme
 
-
 ### Scheme ###
 *.ss~
 *.ss#*
@@ -82,3 +81,10 @@ Temporary Items
 ### VisualStudioCode ###
 *.VC.db*
 .vs/
+.vscode/
+
+#data/ #área de entrada de dados brutos
+#data-out/ #área de saída dos dados tratados
+#data-tmp/ #área de stagging de dados
+
+.gitignore

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Happy Hillary" />
+    <title>Happy Hillary</title>
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap-simplex.css" rel="stylesheet" />
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="content/site.css" rel="stylesheet" />
+
+    <link href="bower_components/jqcloud2/dist/jqcloud.css" rel="stylesheet">
+</head>
+<body>
+
+    <!--header-->
+    <div w3-include-html="_header.html"></div>
+
+    <section class="container-fluid body-content">
+
+        <h2>
+            <i class="fa fa-cloud" aria-hidden="true"></i> Tag Clouds
+        </h2>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">##r01_title##</h3>
+                <div class="col-md-3">
+                    <div id="tg_r01g01" style="height:500px;"></div>
+                    <h4 class="tgLabel">##r01g01_label##</h4>
+                </div>
+                <div class="col-md-3">
+                    <div id="tg_r01g02" style="height:500px;"></div>
+                    <h4 class="tgLabel">##r01g02_label##</h4>
+                </div>
+                <div class="col-md-3">
+                    <div id="tg_r01g03" style="height:500px;"></div>
+                    <h4 class="tgLabel">##r01g03_label##</h4>
+                </div>
+                <div class="col-md-3">
+                    <div id="tg_r01g04" style="height:500px;"></div>
+                    <h4 class="tgLabel">##r01g04_label##</h4>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Corpo (data do vazamento)</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Imprensa (data do vazamento)</h3>
+            </div>
+        </div>
+        -->
+
+    </section>
+
+    <!--footer-->
+    <div w3-include-html="_footer.html"></div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!--jqcloud.js-->
+    <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
+
+    <!--data-->
+    <script src="data/dataTagData.js"></script>
+    <script src="data/dataTagCall.js"></script>
+
+    <!--misc & call-->
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+        };
+
+    </script>
+
+    <script src="scripts/w3data.js"></script>
+    <script type="text/javascript">
+        //w3IncludeHTML();
+    </script>
+</body>
+</html>
