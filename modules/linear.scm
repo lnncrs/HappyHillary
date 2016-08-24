@@ -1,13 +1,11 @@
 
 (require-extension srfi-1)
 (require-extension srfi-13)
+
 (load-relative "lib/utils.scm")
 (load-relative "modules/io/reader.scm")
 (load-relative "modules/io/writer.scm")
 (load-relative "modules/workers/counter.scm")
-
-;(define file "data/leak/leak_subj_201505.txt")
-;(define tag "tg_r01g01_data")
 
 (define files '(("data/leak/leak_subj_201505.txt" "tg_r01g01_data")
                 ("data/leak/leak_subj_201506.txt" "tg_r01g02_data")
