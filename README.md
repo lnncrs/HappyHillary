@@ -1,6 +1,9 @@
 # HappyHillary
 
-Functional programming driven data analysis project about Hillary Clinton's mail data leaked in 2015. The goal is to cross this info with data from press, social networks and polls.
+**Functional programming driven data analisys about Hillary Clinton's mail data leaked in 2015. UFABC 2Q/2016 - Programming Paradigms Class.**
+
+Universidade Federal do ABC - Bacharelado em Ciência da Computação  
+Paradigmas de Programação 2016/Q2
 
 ### But Why?
 
