@@ -82,6 +82,7 @@ Temporary Items
 *.VC.db*
 .vs/
 .vscode/
+_archive/
 
 #data/ #área de entrada de dados brutos
 #data-out/ #área de saída dos dados tratados
