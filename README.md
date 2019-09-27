@@ -5,6 +5,8 @@
 Universidade Federal do ABC - Bacharelado em Ciência da Computação  
 Paradigmas de Programação 2016/Q2
 
+Gustavo Murayama, Lenin Cristi
+
 ### But Why?
 
 This repository was created for 2Q/2016 "Programming Paradigms" class on UFABC (Federal University of ABC/BR) and has two main goals: Be done primarily in Scheme language and implement solutions in concurrency.
